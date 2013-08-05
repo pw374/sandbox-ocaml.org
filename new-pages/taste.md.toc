@@ -1,0 +1,15 @@
+        <div class="span4">
+          <nav id="nav-secondary">
+            <ul class="nav nav-list">
+              <li class="nav-header"><a href="#">Contents</a></li>
+              <li><a href="#elementary-functions">Elementary functions</a></li>
+              <li><a href="#automatic-memory-management">Automatic memory management</a></li>
+              <li><a href="#polymorphism-sorting-lists">Polymorphism: sorting lists</a></li>
+              <li><a href="#imperative-features">Imperative features</a></li>
+              <li><a href="#higher-order-functions">Higher-order functions</a></li>
+              <li><a href="#the-power-of-functions">The power of functions</a></li>
+              <li><a href="#symbolic-computation">Symbolic computation</a></li>
+              <li><a href="#elementary-debugging">Elementary debugging</a></li>
+            </ul>
+          </nav>
+        </div>

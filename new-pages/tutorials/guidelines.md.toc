@@ -1,0 +1,68 @@
+        <div class="span4">
+          <nav id="nav-secondary">
+            <ul class="nav nav-list">
+              <li class="nav-header"><a href="#">Contents</a></li>
+              <li class="dropdown">
+                <a class="dropdown-toggle" href="#general-guidelines-to-write-programs" data-target="#" data-toggle="dropdown">General guidelines to write programs</a>
+                <ul class="dropdown-menu">
+                  <li><a href="#be-simple-and-readable">Be simple and readable</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a class="dropdown-toggle" href="#program-formatting-guidelines" data-target="#" data-toggle="dropdown">Program formatting guidelines</a>
+                <ul class="dropdown-menu">
+                  <li><a href="#lexical-conventions">Lexical conventions</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a class="dropdown-toggle" href="#indentation-of-programs" data-target="#" data-toggle="dropdown">Indentation of programs</a>
+                <ul class="dropdown-menu">
+                  <li><a href="#consistency-of-indentation">Consistency of indentation</a></li>
+                  <li><a href="#width-of-the-page">Width of the page</a></li>
+                  <li><a href="#height-of-the-page">Height of the page</a></li>
+                  <li><a href="#how-much-to-indent">How much to indent</a></li>
+                  <li><a href="#using-tab-stops">Using tab stops</a></li>
+                  <li><a href="#how-to-indent-global-let-...-definitions">How to indent global <code>let ... ;;</code> definitions</a></li>
+                  <li><a href="#how-to-indent-let-...-in-constructs">How to indent <code>let ... in</code> constructs</a></li>
+                  <li><a href="#how-to-indent-if-...-then-...-else-...">How to indent <code>if ... then   ... else ...</code></a></li>
+                  <li><a href="#how-to-indent-pattern-matching-constructs">How to indent pattern-matching constructs</a></li>
+                  <li><a href="#bad-indentation-of-pattern-matching-constructs">Bad indentation of pattern-matching constructs</a></li>
+                  <li><a href="#how-to-indent-function-calls">How to indent function calls</a></li>
+                  <li><a href="#how-to-indent-operations">How to indent operations</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a class="dropdown-toggle" href="#programming-guidelines" data-target="#" data-toggle="dropdown">Programming guidelines</a>
+                <ul class="dropdown-menu">
+                  <li><a href="#how-to-program">How to program</a></li>
+                  <li><a href="#how-to-comment-programs">How to comment programs</a></li>
+                  <li><a href="#how-to-choose-identifiers">How to choose identifiers</a></li>
+                  <li><a href="#when-to-use-parentheses-within-an-expression">When to use parentheses within an expression</a></li>
+                  <li><a href="#how-to-delimit-constructs-in-programs">How to delimit constructs in programs</a></li>
+                  <li><a href="#how-to-use-modules">How to use modules</a></li>
+                  <li><a href="#pattern-matching">Pattern-matching</a></li>
+                  <li><a href="#compiler-warnings">Compiler warnings</a></li>
+                  <li><a href="#the-hd-and-tl-functions">The <code>hd</code> and <code>tl</code> functions</a></li>
+                  <li><a href="#loops">Loops</a></li>
+                  <li><a href="#exceptions">Exceptions</a></li>
+                  <li><a href="#data-structures">Data structures</a></li>
+                  <li><a href="#when-to-use-mutables">When to use mutables</a></li>
+                  <li><a href="#iterators">Iterators</a></li>
+                  <li><a href="#how-to-optimize-programs">How to optimize programs</a></li>
+                  <li><a href="#how-to-choose-between-classes-and-modules">How to choose between classes and modules</a></li>
+                  <li><a href="#clarity-of-ocaml-code">Clarity of OCaml code</a></li>
+                </ul>
+              </li>
+              <li class="dropdown">
+                <a class="dropdown-toggle" href="#managing-program-development" data-target="#" data-toggle="dropdown">Managing program development</a>
+                <ul class="dropdown-menu">
+                  <li><a href="#how-to-edit-programs">How to edit programs</a></li>
+                  <li><a href="#how-to-edit-with-the-interactive-system">How to edit with the interactive system</a></li>
+                  <li><a href="#how-to-compile">How to compile</a></li>
+                  <li><a href="#how-to-develop-as-a-team-version-control">How to develop as a team: version control</a></li>
+                  <li><a href="#notes">Notes</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>

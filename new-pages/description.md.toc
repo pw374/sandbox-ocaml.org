@@ -1,0 +1,30 @@
+        <div class="span4">
+          <nav id="nav-secondary">
+            <ul class="nav nav-list">
+              <li class="nav-header"><a href="#">Contents</a></li>
+              <li><a href="#strengths">Strengths</a></li>
+              <li><a href="#a-widely-used-programming-language">A Widely Used Programming Language</a></li>
+              <li class="dropdown">
+                <a class="dropdown-toggle" href="#overview-of-the-ocaml-language-and-tools" data-target="#" data-toggle="dropdown">Overview of the OCaml language and tools</a>
+                <ul class="dropdown-menu">
+                  <li><a href="#safety">Safety</a></li>
+                  <li><a href="#functions">Functions</a></li>
+                  <li><a href="#imperative-features">Imperative features</a></li>
+                  <li><a href="#error-recovery">Error recovery</a></li>
+                  <li><a href="#data-types">Data Types</a></li>
+                  <li><a href="#aptness-to-symbolic-computation">Aptness to symbolic computation</a></li>
+                  <li><a href="#polymorphism">Polymorphism</a></li>
+                  <li><a href="#programming-in-the-large">Programming in the large</a></li>
+                  <li><a href="#object-oriented-programming">Object-oriented programming</a></li>
+                  <li><a href="#automatic-memory-management-and-incremental-garbage-collection">Automatic memory management and incremental garbage collection</a></li>
+                  <li><a href="#evaluation-regime">Evaluation regime</a></li>
+                  <li><a href="#efficient-compiler-efficient-compiled-code">Efficient compiler, efficient compiled code</a></li>
+                  <li><a href="#interactivity">Interactivity</a></li>
+                  <li><a href="#debugging-facilities">Debugging facilities</a></li>
+                  <li><a href="#parsing">Parsing</a></li>
+                  <li><a href="#portability">Portability</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
