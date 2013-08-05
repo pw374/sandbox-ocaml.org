@@ -1,4 +1,4 @@
 sandbox-ocaml.org
 =================
 
-ocaml.org with the new (2013) design
+sandbox for ocaml.org with the new (2013) design
