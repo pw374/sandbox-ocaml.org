@@ -6,12 +6,14 @@ Debugging
 This note quickly presents two techniques to debug OCaml programs:
 
 -   [Tracing functions calls](#trace)that works in the toplevel,
--   [OCaml debugger](#ocamldebug), which allows analysing programes compiled with `ocamlc`.
+-   [OCaml debugger](#ocamldebug), which allows analysing programes
+    compiled with `ocamlc`.
 
 Tracing functions calls in the toplevel
 ---------------------------------------
 
-The simplest way to debug programs in the toplevel is to follow the function calls, by “tracing” the faulty function:
+The simplest way to debug programs in the toplevel is to follow the
+function calls, by “tracing” the faulty function:
 
 ~~~~ {.listing}
 
@@ -36,7 +38,9 @@ fib is no longer traced.
 
 ### Polymorphic function
 
-A difficulty with polymorphic functions is that the output of the trace system is not very informative in case of polymorphic arguments and/or results. Consider a sorting algorithm (say bubble sort):
+A difficulty with polymorphic functions is that the output of the trace
+system is not very informative in case of polymorphic arguments and/or
+results. Consider a sorting algorithm (say bubble sort):
 
 ~~~~ {ml:content="ocaml"}
   let exchange i j v =
@@ -75,9 +79,19 @@ one_pass_vect* --> ()
 - : unit = ()
 ~~~~
 
-The function `one_pass_vect` being polymorphic, its vector argument is printed as a vector containing polymorphic values, `[|<poly>; <poly>;           <poly>|]`, and thus we cannot properly follow the computation.
+The function `one_pass_vect` being polymorphic, its vector argument is
+printed as a vector containing polymorphic values,
+`[|<poly>; <poly>;           <poly>|]`, and thus we cannot properly
+follow the computation.
 
-A simple way to overcome this problem is to define a monomorphic version of the faulty function. This is fairly easy using a *type constraint*. Generally speaking, this allows a proper understanding of the error in the definition of the polymorphic function. Once this has been corrected, you just have to suppress the type constraint to revert to a polymorphic version of the function. For our sorting routine, a single type constraint on the argument of the `exchange` function warranties a monomorphic typing, that allows a proper trace of function calls:
+A simple way to overcome this problem is to define a monomorphic version
+of the faulty function. This is fairly easy using a *type constraint*.
+Generally speaking, this allows a proper understanding of the error in
+the definition of the polymorphic function. Once this has been
+corrected, you just have to suppress the type constraint to revert to a
+polymorphic version of the function. For our sorting routine, a single
+type constraint on the argument of the `exchange` function warranties a
+monomorphic typing, that allows a proper trace of function calls:
 
 ~~~~ {.listing}
 # let exchange i j (v : int vect) =
@@ -109,22 +123,41 @@ one_pass_vect* --> ()
 
 ### Limitations
 
-To keep track of assignments to data structures and mutable variables in a program, the trace facility is not powerful enough. You need an extra mechanism to stop the program in any place and ask for internal values: that is a symbolic debugger with its stepping feature.
+To keep track of assignments to data structures and mutable variables in
+a program, the trace facility is not powerful enough. You need an extra
+mechanism to stop the program in any place and ask for internal values:
+that is a symbolic debugger with its stepping feature.
 
-Stepping a functional program has a meaning which is a bit weird to define and understand. Let me say that we use the notion of *runtime events* that happen for instance when a parameter is passed to a function or when entering a pattern matching, or selecting a clause in a pttern matching. Computation progress is taken into account by these events, independantly of the instructions executed on the hardware.
+Stepping a functional program has a meaning which is a bit weird to
+define and understand. Let me say that we use the notion of *runtime
+events* that happen for instance when a parameter is passed to a
+function or when entering a pattern matching, or selecting a clause in a
+pttern matching. Computation progress is taken into account by these
+events, independantly of the instructions executed on the hardware.
 
-Although this is difficult to implement, there exists such a debugger for OCaml under Unix: `ocamldebug` (there also exists one for Caml Light, as a user contribution). Its use is illustrated in the next section.
+Although this is difficult to implement, there exists such a debugger
+for OCaml under Unix: `ocamldebug` (there also exists one for Caml
+Light, as a user contribution). Its use is illustrated in the next
+section.
 
-In fact, for complex programs, it is likely the case that the programmer will use explicit printing to find the bugs, since this methodology allows the reduction of the trace material : only useful data are printed and special purpose formats are more suited to get the relevant information, than what can be output automatically by the generic pretty-printer used by the trace mechanism.
+In fact, for complex programs, it is likely the case that the programmer
+will use explicit printing to find the bugs, since this methodology
+allows the reduction of the trace material : only useful data are
+printed and special purpose formats are more suited to get the relevant
+information, than what can be output automatically by the generic
+pretty-printer used by the trace mechanism.
 
 The OCaml debugger
 ------------------
 
-We now give a quick tutorial for the OCaml debugger (`ocamldebug`). Before starting, please note that `ocamldebug` does not work under native Windows ports of OCaml (but it runs under the Cygwin port.
+We now give a quick tutorial for the OCaml debugger (`ocamldebug`).
+Before starting, please note that `ocamldebug` does not work under
+native Windows ports of OCaml (but it runs under the Cygwin port.
 
 ### Launching the debugger
 
-Consider the following obviously wrong program written in the file `uncaught.ml`:
+Consider the following obviously wrong program written in the file
+`uncaught.ml`:
 
 ~~~~ {ml:content="ocaml noeval"}
 (* file uncaught.ml *)
@@ -135,9 +168,11 @@ add_address "IRIA" "Rocquencourt";;
 print_string (find_address "INRIA"); print_newline ();;
 ~~~~
 
-At runtime, the program raises an uncaught exception `Not_found`. Suppose we want to find where and why this exception has been raised, we can proceed as follows:
+At runtime, the program raises an uncaught exception `Not_found`.
+Suppose we want to find where and why this exception has been raised, we
+can proceed as follows:
 
-1.  we compile the program in debug mode:
+1.  we compile the program in debug mode:\
 
     ~~~~ {.listing}
     ocamlc -g uncaught.ml
@@ -170,7 +205,9 @@ Uncaught exception: Not_found
 (ocd)
 ~~~~
 
-Self explanatory, is'nt it? So, you want to step backward to set the program counter before the time the exception is raised; hence type in `b` as *backstep*, and you get
+Self explanatory, is'nt it? So, you want to step backward to set the
+program counter before the time the exception is raised; hence type in
+`b` as *backstep*, and you get
 
 ~~~~ {.listing}
 (ocd) b
@@ -178,9 +215,14 @@ Time : 11 - pc : 15500 - module List
 143     [] -> <|b|>raise Not_found
 ~~~~
 
-The debugger tells you that you are in module `List`, inside a pattern matching on a list that already chose the `[]` case and is about to execute `raise Not_found`, since the program is stopped just before this expression (as witnessed by the `<|b|>` mark).
+The debugger tells you that you are in module `List`, inside a pattern
+matching on a list that already chose the `[]` case and is about to
+execute `raise Not_found`, since the program is stopped just before this
+expression (as witnessed by the `<|b|>` mark).
 
-But, as you know, you want the debugger to tell you which procedure calls the one from `List`, and also who calls the procedure that calls the one from `List`; hence, you want a backtrace of the execution stack:
+But, as you know, you want the debugger to tell you which procedure
+calls the one from `List`, and also who calls the procedure that calls
+the one from `List`; hence, you want a backtrace of the execution stack:
 
 ~~~~ {.listing}
 (ocd) bt
@@ -188,7 +230,8 @@ But, as you know, you want the debugger to tell you which procedure calls the on
 #1  Pc : 19128  Uncaught char 221
 ~~~~
 
-So the last function called is from module `List` at character 3562, that is :
+So the last function called is from module `List` at character 3562,
+that is :
 
 ~~~~ {ml:content="ocaml noeval"}
 let rec assoc x = function
@@ -197,18 +240,23 @@ let rec assoc x = function
   | (a,b)::l -> if a = x then b else assoc x l
 ~~~~
 
-The function that calls it is in module `Uncaught`, file `uncaught.ml` char 221:
+The function that calls it is in module `Uncaught`, file `uncaught.ml`
+char 221:
 
 ~~~~ {.listing}
 print_string (find_address "INRIA"); print_newline ();;
                                   ^
 ~~~~
 
-To sum up: if you're developping a program you can compile it with the `-g` option, to be ready to debug the program if necessary. Hence, to find a spurious exception you just need to type `ocamldebug a.out`, then `r`, `b`, and `bt` gives you the backtrace.
+To sum up: if you're developping a program you can compile it with the
+`-g` option, to be ready to debug the program if necessary. Hence, to
+find a spurious exception you just need to type `ocamldebug a.out`, then
+`r`, `b`, and `bt` gives you the backtrace.
 
 ### Getting help and info in the debugger
 
-To get more info about the current status of the debugger you can ask it directly at the toplevel prompt of the debugger; for instance:
+To get more info about the current status of the debugger you can ask it
+directly at the toplevel prompt of the debugger; for instance:
 
 ~~~~ {.listing}
 (ocd) info breakpoints
@@ -224,7 +272,8 @@ break @ [module] # characternum
 
 ### Setting break points
 
-Let's set up a breakpoint and rerun the entire program from the beginning (`(g)oto 0` then `(r)un`):
+Let's set up a breakpoint and rerun the entire program from the
+beginning (`(g)oto 0` then `(r)un`):
 
 ~~~~ {.listing}
 (ocd) break @Uncaught 9
@@ -240,7 +289,8 @@ Breakpoint : 1
 9 add "IRIA" "Rocquencourt"<|a|>;;
 ~~~~
 
-Then, we can step and find what happens when `find_address` is about to be called
+Then, we can step and find what happens when `find_address` is about to
+be called
 
 ~~~~ {.listing}
 (ocd) s
@@ -255,8 +305,13 @@ $1 : (string * string) list = ["IRIA", "Rocquencourt"]
 (ocd)
 ~~~~
 
-Now we can guess why `List.assoc` will fail to find "INRIA" in the list...
+Now we can guess why `List.assoc`{ml:content="ocaml noeval"} will fail
+to find "INRIA" in the list...
 
 ### Using the debugger under (X)Emacs
 
-Note also that under Emacs you call the debugger using `ESC-x` `camldebug a.out`. Then Emacs will set you directly to the file and character reported by the debugger, and you can step back and forth using `ESC-b` and `ESC-s`, you can set up break points using `CTRL-X       space`, and so on...
+Note also that under Emacs you call the debugger using `ESC-x`
+`camldebug a.out`. Then Emacs will set you directly to the file and
+character reported by the debugger, and you can step back and forth
+using `ESC-b` and `ESC-s`, you can set up break points using
+`CTRL-X       space`, and so on...

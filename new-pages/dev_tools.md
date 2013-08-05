@@ -12,11 +12,15 @@ Editor modes
 
 ### Acme
 
-[Acme](https://en.wikipedia.org/wiki/Acme_(text_editor)) is a minimalistic text editor from plan9. While there are no language-specific features to the editor, there are a few tricks one can use to make it friendlier:
+[Acme](https://en.wikipedia.org/wiki/Acme_(text_editor)) is a
+minimalistic text editor from plan9. While there are no
+language-specific features to the editor, there are a few tricks one can
+use to make it friendlier:
 
 #### Plumbimg
 
-To allow plumbing of OCaml error messages, add the following to your plumbing rules:
+To allow plumbing of OCaml error messages, add the following to your
+plumbing rules:
 
     type is text
     data matches 'File "([.a-zA-Z¡-<U+FFFF>0-9_/\-]*[a-zA-Z¡-<U+FFFF>0-9_/\-])", line ([0-9]+), characters ([0-9]+)-([0-9]+):'
@@ -28,7 +32,8 @@ To allow plumbing of OCaml error messages, add the following to your plumbing ru
 
 #### OCaml top-level
 
-Simply execute `win` to get a shell and run `ocaml` from within this shell.
+Simply execute `win` to get a shell and run `ocaml` from within this
+shell.
 
 #### Commenting
 
@@ -40,14 +45,17 @@ The following `Edit` command will comment your selection.
 
 #### Indenting
 
-You can pipe your selection (or the whole file) through an external indenter such as [`ocp-indent`](https://github.com/OCamlPro/ocp-indent) middle-clicking on the command `|ocp-indent`.
+You can pipe your selection (or the whole file) through an external
+indenter such as [`ocp-indent`](https://github.com/OCamlPro/ocp-indent)
+middle-clicking on the command `|ocp-indent`.
 
 Compilation tools
 -----------------
 
 ### Findlib/ocamlfind
 
-[`ocamlfind`](http://projects.camlcity.org/projects/findlib.html/) is `pkg-config` for OCaml.
+[`ocamlfind`](http://projects.camlcity.org/projects/findlib.html/) is
+`pkg-config` for OCaml.
 
 ### ocamlbuild
 
@@ -57,7 +65,10 @@ Compilation tools
 
 ### OMake
 
-[OMake](http://omake.metaprl.org/index.html) is a build system designed for scalability and portability. It uses a syntax similar to make utilities you may have used, but it features many additional enhancements.
+[OMake](http://omake.metaprl.org/index.html) is a build system designed
+for scalability and portability. It uses a syntax similar to make
+utilities you may have used, but it features many additional
+enhancements.
 
 See the [guide](http://omake.metaprl.org/manual/omake.html).
 

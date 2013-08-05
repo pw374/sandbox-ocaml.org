@@ -1,17 +1,33 @@
 Caml Light's License
 ====================
 
-In the following, “the Library” refers to all files marked “Copyright Inria” in the following directories and their sub-directories of the distribution:
+In the following, “the Library” refers to all files marked “Copyright
+Inria” in the following directories and their sub-directories of the
+distribution:
 
 > `runtime`, `config`, `contrib`, `lib`
 
-and “the Compiler” refers to all files marked “Copyright Inria” in the other directories and their sub-directories of the distribution.
+and “the Compiler” refers to all files marked “Copyright Inria” in the
+other directories and their sub-directories of the distribution.
 
-The Compiler is distributed under the terms of the [Q Public License](#qpl) version 1.0 (included below).
+The Compiler is distributed under the terms of the [Q Public
+License](#qpl) version 1.0 (included below).
 
-The Library is distributed under the terms of the [GNU Library General Public License](#lgpl) version 2 (included below).
+The Library is distributed under the terms of the [GNU Library General
+Public License](#lgpl) version 2 (included below).
 
-As a special exception to the GNU Library General Public License, you may link, statically or dynamically, a "work that uses the Library" with a publicly distributed version of the Library to produce an executable file containing portions of the Library, and distribute that executable file under terms of your choice, without any of the additional requirements listed in clause 6 of the GNU Library General Public License. By "a publicly distributed version of the Library", we mean either the unmodified Library as distributed by Inria, or a modified version of the Library that is distributed under the conditions defined in clause 3 of the GNU Library General Public License. This exception does not however invalidate any other reasons why the executable file might be covered by the GNU Library General Public License.
+As a special exception to the GNU Library General Public License, you
+may link, statically or dynamically, a "work that uses the Library" with
+a publicly distributed version of the Library to produce an executable
+file containing portions of the Library, and distribute that executable
+file under terms of your choice, without any of the additional
+requirements listed in clause 6 of the GNU Library General Public
+License. By "a publicly distributed version of the Library", we mean
+either the unmodified Library as distributed by Inria, or a modified
+version of the Library that is distributed under the conditions defined
+in clause 3 of the GNU Library General Public License. This exception
+does not however invalidate any other reasons why the executable file
+might be covered by the GNU Library General Public License.
 
 The Q Public License, version 1.0
 ---------------------------------

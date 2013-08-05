@@ -6,7 +6,8 @@
 -   [Success Stories](success.html)
 -   [Who Is Using It?](companies.html)
 -   [Pleac](http://pleac.sourceforge.net/pleac_ocaml/)
--   [Rosetta](http://rosettacode.org/wiki/Category:OCaml) [langref.org](http://langref.org/ocaml)
+-   [Rosetta](http://rosettacode.org/wiki/Category:OCaml)
+    [langref.org](http://langref.org/ocaml)
 
 [Learn ****](#)
 
@@ -36,7 +37,8 @@
 -   [Blogs](planet/)
 -   [Meetings](meetings/)
 -   [IRC](irc://irc.freenode.net/ocaml)
--   [Stack Overflow](http://stackoverflow.com/questions/tagged?tagnames=ocaml)
+-   [Stack
+    Overflow](http://stackoverflow.com/questions/tagged?tagnames=ocaml)
 -   [Reddit](http://www.reddit.com/r/ocaml/)
 -   [Commercial Support](support.html)
 

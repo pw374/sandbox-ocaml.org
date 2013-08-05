@@ -6,7 +6,9 @@ Une centaine de lignes d'OCaml
 Fonctions élémentaires
 ----------------------
 
-Avec le système interactif, définissons la fonction `square` (carré) et la fonction factorielle dans sa version récursive. Puis, appliquons ces fonctions à quelques valeurs choisies :
+Avec le système interactif, définissons la fonction `square` (carré) et
+la fonction factorielle dans sa version récursive. Puis, appliquons ces
+fonctions à quelques valeurs choisies :
 
 ~~~~ {.listing ml:content="ocaml"}
 let square x = x * x;;
@@ -20,9 +22,13 @@ square 120;;
 Gestion automatique de la mémoire
 ---------------------------------
 
-Toutes les opérations d'allocation et de libération de la mémoire sont complètement automatiques. Par exemple, considérons les listes simplement chaînées.
+Toutes les opérations d'allocation et de libération de la mémoire sont
+complètement automatiques. Par exemple, considérons les listes
+simplement chaînées.
 
-Les listes sont prédéfinies en OCaml. La liste vide est notée `[]`. Le constructeur d'ajout d'un élément à une liste est noté `::` (sous forme infixe).
+Les listes sont prédéfinies en OCaml. La liste vide est notée `[]`. Le
+constructeur d'ajout d'un élément à une liste est noté `::` (sous forme
+infixe).
 
 ~~~~ {.listing ml:content="ocaml"}
 let l = 1 :: 2 :: 3 :: [];;
@@ -45,7 +51,10 @@ and insert elem = function
               else x :: insert elem l;;
 ~~~~
 
-On notera que le type des éléments de la liste reste non spécifié: il est représenté par une *variable de types* `'a`. La fonction `sort` peut donc être appliquée aussi bien à une liste d'entiers qu'à une liste de chaînes de caractères.
+On notera que le type des éléments de la liste reste non spécifié: il
+est représenté par une *variable de types* `'a`. La fonction `sort` peut
+donc être appliquée aussi bien à une liste d'entiers qu'à une liste de
+chaînes de caractères.
 
 ~~~~ {.listing ml:content="ocaml"}
 sort [2; 1; 0];;
@@ -55,7 +64,9 @@ sort ["yes"; "ok"; "sure"; "ya"; "yep"];;
 Programmation impérative
 ------------------------
 
-Représentons les polynômes des tableaux de coefficients entiers. Alors, pour ajouter deux polynômes, on alloue d'abord le tableau résultat, puis on le remplit à l'aide de deux boucles `for` successives.
+Représentons les polynômes des tableaux de coefficients entiers. Alors,
+pour ajouter deux polynômes, on alloue d'abord le tableau résultat, puis
+on le remplit à l'aide de deux boucles `for` successives.
 
 ~~~~ {.listing ml:content="ocaml"}
 let add_polynom p1 p2 =
@@ -68,9 +79,13 @@ let add_polynom p1 p2 =
 add_polynom [| 1; 2 |] [| 1; 2; 3 |];;
 ~~~~
 
-OCaml offre des cellules mémoire modifiables appelées *références* : `ref init` renvoie une nouvelle cellule, dont le contenu initial est `init`, `!cell` renvoie le contenu actuel de `cell`, et `cell     :=       x` met dans `cell` la valeur `x`.
+OCaml offre des cellules mémoire modifiables appelées *références* :
+`ref init` renvoie une nouvelle cellule, dont le contenu initial est
+`init`, `!cell` renvoie le contenu actuel de `cell`, et
+`cell     :=       x` met dans `cell` la valeur `x`.
 
-On peut redéfinir `fact` à l'aide d'une référence et d'une boucle `for` :
+On peut redéfinir `fact` à l'aide d'une référence et d'une boucle `for`
+:
 
 ~~~~ {.listing ml:content="ocaml"}
   let fact n =
@@ -85,7 +100,10 @@ On peut redéfinir `fact` à l'aide d'une référence et d'une boucle `for` :
 Fonctions d'ordre supérieur
 ---------------------------
 
-Il n'y a pas de restriction sur les fonctions, qui peuvent donc être passés en argument à d'autres fonctions. Définissons une fonction `sigma` qui renvoie la somme des résultats de l'application d'une fonction `f` donnée aux éléments d'une liste :
+Il n'y a pas de restriction sur les fonctions, qui peuvent donc être
+passés en argument à d'autres fonctions. Définissons une fonction
+`sigma` qui renvoie la somme des résultats de l'application d'une
+fonction `f` donnée aux éléments d'une liste :
 
 ~~~~ {.listing ml:content="ocaml"}
   let rec sigma f = function
@@ -93,13 +111,15 @@ Il n'y a pas de restriction sur les fonctions, qui peuvent donc être passés en
     | x :: l -> f x + sigma f l
 ~~~~
 
-On peut définir des fonctions anonymes à l'aide de la construction `fun` ou `function` :
+On peut définir des fonctions anonymes à l'aide de la construction `fun`
+ou `function` :
 
 ~~~~ {.listing ml:content="ocaml"}
 sigma (fun x -> x * x) [1; 2; 3];;
 ~~~~
 
-Polymorphisme et fonctions d'ordre supérieur permettent de définir la composition de fonctions sous sa forme la plus générale :
+Polymorphisme et fonctions d'ordre supérieur permettent de définir la
+composition de fonctions sous sa forme la plus générale :
 
 ~~~~ {.listing ml:content="ocaml"}
   let compose f g = fun x -> f (g x);;
@@ -110,7 +130,8 @@ Polymorphisme et fonctions d'ordre supérieur permettent de définir la composit
 La puissance des fonctions
 --------------------------
 
-La puissance des fonctions ne peut pas être mieux illustrée que par la fonction « puissance » :
+La puissance des fonctions ne peut pas être mieux illustrée que par la
+fonction « puissance » :
 
 ~~~~ {.listing ml:content="ocaml"}
   let rec power f n = 
@@ -118,7 +139,8 @@ La puissance des fonctions ne peut pas être mieux illustrée que par la fonctio
     else compose f (power f (n - 1));;
 ~~~~
 
-La dérivée `n`<sup>ième</sup> d'une fonction peut alors se définir comme en mathématiques en élevant la fonction dérivée à la puissance `n` :
+La dérivée `n`^ième^ d'une fonction peut alors se définir comme en
+mathématiques en élevant la fonction dérivée à la puissance `n` :
 
 ~~~~ {.listing ml:content="ocaml"}
   let derivative dx f = fun x -> (f (x +. dx) -. f x) /. dx;;
@@ -129,7 +151,10 @@ La dérivée `n`<sup>ième</sup> d'une fonction peut alors se définir comme en 
 Calcul symbolique
 -----------------
 
-Considérons des expressions symboliques simples comprenant des entiers, des variables, un opérateur de liaison `let`, et des opérateurs binaires. Ces expressions peuvent être définies à l'aide d'un nouveau type de données, de la façon suivante :
+Considérons des expressions symboliques simples comprenant des entiers,
+des variables, un opérateur de liaison `let`, et des opérateurs
+binaires. Ces expressions peuvent être définies à l'aide d'un nouveau
+type de données, de la façon suivante :
 
 ~~~~ {.listing ml:content="ocaml"}
   type expression =
@@ -139,7 +164,8 @@ Considérons des expressions symboliques simples comprenant des entiers, des var
     | Binop of string * expression * expression;;
 ~~~~
 
-L'évaluation de ces expressions utilise un environnement qui à un identificateur associe une valeur, représenté par une liste de paires.
+L'évaluation de ces expressions utilise un environnement qui à un
+identificateur associe une valeur, représenté par une liste de paires.
 
 ~~~~ {.listing ml:content="ocaml"}
   let rec eval env = function
@@ -167,12 +193,17 @@ L'évaluation de ces expressions utilise un environnement qui à un identificate
   eval [] (Let ("x", Num 1, Binop ("+", Var "x", Var "x")));;
 ~~~~
 
-L'emploi du filtrage facilite la définition des fonctions opérant sur des données symboliques, en donnant aux définitions de fonctions une forme similaire à celle des déclarations de types. Notez, en effet, la similitude entre la définition de la fonction `eval` et la définition du type `expression`.
+L'emploi du filtrage facilite la définition des fonctions opérant sur
+des données symboliques, en donnant aux définitions de fonctions une
+forme similaire à celle des déclarations de types. Notez, en effet, la
+similitude entre la définition de la fonction `eval` et la définition du
+type `expression`.
 
 Trace des fonctions
 -------------------
 
-Pour terminer, voici le moyen le plus élémentaire pour espionner les fonctions :
+Pour terminer, voici le moyen le plus élémentaire pour espionner les
+fonctions :
 
 ~~~~ {.listing}
 
