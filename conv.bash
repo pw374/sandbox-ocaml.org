@@ -2,13 +2,30 @@
 
 build_new_md () {
     (
+        X=$IFS
         cd old-pages &&
         find . -iname \*.html |
         while read l
         do
             mkdir -p ../new-pages/$(dirname $l)
-            pandoc $l -o ../new-pages/$(dirname $l)/$(basename $l html)md
+            if grep -q 'ml:replace="include .*"' $l
+            then
+                IFS=
+                while read i
+                do
+                    if grep -q 'ml:replace="include ' <<< "$i"
+                    then
+                        inc="$(sed -e 's|.* ml:replace="include \([^ <=>"][^ <=>"]*\)".*|\1|g' <<< "$i")"
+                        cat $(dirname "$l")/"$inc" || printf 'l=%s inc=%s\n' "$l" "$inc"
+                    else
+                        echo "$i"
+                    fi
+                done < $l | pandoc -o ../new-pages/$(dirname $l)/$(basename $l html)md
+            else
+                pandoc $l -o ../new-pages/$(dirname $l)/$(basename $l html)md
+            fi
         done
+        X=$IFS
         )
 }
 
@@ -147,4 +164,15 @@ build_new_site () {
         build_new_html "$l"
     done
     ( cd  new-site && mv index{,-old}.html ; mv index{-new,}.html )
+}
+
+map () {
+    ( cd new-site || exit
+        echo '<ul>'
+        find . -name \*.html | while read l
+        do
+            echo "<li><a href='$l'>$l</a></li>"
+        done
+        echo '</ul>'
+        ) > map.html
 }
