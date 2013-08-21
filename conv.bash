@@ -20,9 +20,9 @@ build_new_md () {
                     else
                         echo "$i"
                     fi
-                done < $l | \pandoc -o ../new-pages/$(dirname $l)/$(basename $l html)md
+                done < $l | \pandoc -t markdown_strict -o ../new-pages/$(dirname $l)/$(basename $l html)md
             else
-                \pandoc $l -o ../new-pages/$(dirname $l)/$(basename $l html)md
+                \pandoc $l -t markdown_strict -o ../new-pages/$(dirname $l)/$(basename $l html)md
             fi
         done
         X=$IFS
