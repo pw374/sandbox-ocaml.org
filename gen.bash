@@ -1,5 +1,13 @@
 #!/bin/bash
 
+if which -s mpp && which omd 
+then
+    true
+else
+    echo "You don't have mpp and/or omd"
+    exit 1
+fi
+
 IFS=
 find "$@" -type f -iname '*.md' |
 while read i
