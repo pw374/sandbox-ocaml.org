@@ -1,7 +1,7 @@
 Caml Light 0.75
 ===============
 
-**License** \
+**License**   
 The Caml Light system is open source software, please read its
 [license](../license.html) for more details.
 
