@@ -3,15 +3,15 @@
             <ul class="nav nav-list">
               <li class="nav-header"><a href="#">Contents</a></li>
               <li class="dropdown">
-                <a class="dropdown-toggle" href="#status-of-pointers-in-ocaml" data-target="#" data-toggle="dropdown">Status of pointers in OCaml</a>
+                <a class="dropdown-toggle" href="#StatusofpointersinOCaml" data-target="#" data-toggle="dropdown">Status of pointers in OCaml</a>
                 <ul class="dropdown-menu">
-                  <li><a href="#explicit-pointers-are-ocaml-values-of-type-ref">Explicit pointers are OCaml values of type <code>ref</code></a></li>
-                  <li><a href="#pointers-and-mutable-fields-or-vectors">Pointers and mutable fields or vectors</a></li>
+                  <li><a href="#ExplicitpointersareOCamlvaluesoftypecoderefcode"> Explicit pointers are OCaml values of type <code>ref</code></a></li>
+                  <li><a href="#Pointersandmutablefieldsorvectors"> Pointers and mutable fields or vectors</a></li>
                 </ul>
               </li>
-              <li><a href="#defining-pointers-in-ocaml">Defining pointers in OCaml</a></li>
-              <li><a href="#integer-lists">Integer Lists</a></li>
-              <li><a href="#polymorphic-lists">Polymorphic lists</a></li>
+              <li><a href="#DefiningpointersinOCaml">Defining pointers in OCaml</a></li>
+              <li><a href="#IntegerLists">Integer Lists</a></li>
+              <li><a href="#Polymorphiclists">Polymorphic lists</a></li>
             </ul>
           </nav>
         </div>

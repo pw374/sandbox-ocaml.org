@@ -2,15 +2,15 @@
           <nav id="nav-secondary">
             <ul class="nav nav-list">
               <li class="nav-header"><a href="#">Contents</a></li>
-              <li><a href="#jane-street">Jane Street</a></li>
-              <li><a href="#the-unison-file-synchronizer">The Unison File Synchronizer</a></li>
-              <li><a href="#the-mldonkey-peer-to-peer-client">The MLdonkey peer-to-peer client</a></li>
-              <li><a href="#lexifis-modeling-language-for-finance">LexiFi's Modeling Language for Finance</a></li>
-              <li><a href="#the-coq-proof-assistant">The Coq Proof Assistant</a></li>
-              <li><a href="#the-astrée-static-analyzer">The ASTRÉE Static Analyzer</a></li>
-              <li><a href="#slam">SLAM</a></li>
-              <li><a href="#fftw">FFTW</a></li>
-              <li><a href="#liquidsoap">Liquidsoap</a></li>
+              <li><a href="#JaneStreet">Jane Street</a></li>
+              <li><a href="#TheUnisonFileSynchronizer">The Unison File Synchronizer</a></li>
+              <li><a href="#TheMLdonkeypeertopeerclient">The MLdonkey peer-to-peer client</a></li>
+              <li><a href="#LexiFiapossModelingLanguageforFinance">LexiFi&apos;s Modeling Language for Finance</a></li>
+              <li><a href="#TheCoqProofAssistant">The Coq Proof Assistant</a></li>
+              <li><a href="#TheASTREStaticAnalyzer">The ASTRÉE Static Analyzer</a></li>
+              <li><a href="#SLAM">SLAM</a></li>
+              <li><a href="#FFTW">FFTW</a></li>
+              <li><a href="#Liquidsoap">Liquidsoap</a></li>
             </ul>
           </nav>
         </div>

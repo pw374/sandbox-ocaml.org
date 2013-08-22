@@ -1,7 +1,7 @@
 OCaml 4.00.1
 ============
 
-**License** \
+**License**   
  The OCaml system is open source software: the compiler is distributed
 under the terms of the Q Public License, and its library is under LGPL;
 please read the [license](../license.html) document for more details. A

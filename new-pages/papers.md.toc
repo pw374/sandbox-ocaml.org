@@ -3,21 +3,21 @@
             <ul class="nav nav-list">
               <li class="nav-header"><a href="#">Contents</a></li>
               <li class="dropdown">
-                <a class="dropdown-toggle" href="#language-features" data-target="#" data-toggle="dropdown">Language features</a>
+                <a class="dropdown-toggle" href="#Languagefeatures" data-target="#" data-toggle="dropdown">Language features</a>
                 <ul class="dropdown-menu">
-                  <li><a href="#the-core-language">The core language</a></li>
-                  <li><a href="#modules">Modules</a></li>
-                  <li><a href="#objects">Objects</a></li>
-                  <li><a href="#polymorphic-variants">Polymorphic variants</a></li>
-                  <li><a href="#labeled-and-optional-parameters">Labeled and optional parameters</a></li>
+                  <li><a href="#Thecorelanguage"> The core language</a></li>
+                  <li><a href="#Modules"> Modules</a></li>
+                  <li><a href="#Objects"> Objects</a></li>
+                  <li><a href="#Polymorphicvariants"> Polymorphic variants</a></li>
+                  <li><a href="#Labeledandoptionalparameters"> Labeled and optional parameters</a></li>
                 </ul>
               </li>
               <li class="dropdown">
-                <a class="dropdown-toggle" href="#compilers-and-runtime-system" data-target="#" data-toggle="dropdown">Compilers and runtime system</a>
+                <a class="dropdown-toggle" href="#Compilersandruntimesystem" data-target="#" data-toggle="dropdown">Compilers and runtime system</a>
                 <ul class="dropdown-menu">
-                  <li><a href="#the-bytecode-compiler-and-bytecode-interpreter">The bytecode compiler and bytecode interpreter</a></li>
-                  <li><a href="#the-native-code-compiler">The native-code compiler</a></li>
-                  <li><a href="#the-garbage-collector">The garbage collector</a></li>
+                  <li><a href="#Thebytecodecompilerandbytecodeinterpreter"> The bytecode compiler and bytecode interpreter</a></li>
+                  <li><a href="#Thenativecodecompiler"> The native-code compiler</a></li>
+                  <li><a href="#Thegarbagecollector"> The garbage collector</a></li>
                 </ul>
               </li>
             </ul>

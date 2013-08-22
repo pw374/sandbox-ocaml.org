@@ -2,14 +2,14 @@
           <nav id="nav-secondary">
             <ul class="nav nav-list">
               <li class="nav-header"><a href="#">Contents</a></li>
-              <li><a href="#elementary-functions">Elementary functions</a></li>
-              <li><a href="#automatic-memory-management">Automatic memory management</a></li>
-              <li><a href="#polymorphism-sorting-lists">Polymorphism: sorting lists</a></li>
-              <li><a href="#imperative-features">Imperative features</a></li>
-              <li><a href="#higher-order-functions">Higher-order functions</a></li>
-              <li><a href="#the-power-of-functions">The power of functions</a></li>
-              <li><a href="#symbolic-computation">Symbolic computation</a></li>
-              <li><a href="#elementary-debugging">Elementary debugging</a></li>
+              <li><a href="#Elementaryfunctions">Elementary functions</a></li>
+              <li><a href="#Automaticmemorymanagement">Automatic memory management</a></li>
+              <li><a href="#Polymorphismsortinglists">Polymorphism: sorting lists</a></li>
+              <li><a href="#Imperativefeatures">Imperative features</a></li>
+              <li><a href="#Higherorderfunctions">Higher-order functions</a></li>
+              <li><a href="#Thepoweroffunctions">The power of functions</a></li>
+              <li><a href="#Symboliccomputation">Symbolic computation</a></li>
+              <li><a href="#Elementarydebugging">Elementary debugging</a></li>
             </ul>
           </nav>
         </div>

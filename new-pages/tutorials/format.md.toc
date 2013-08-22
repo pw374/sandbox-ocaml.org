@@ -2,23 +2,23 @@
           <nav id="nav-secondary">
             <ul class="nav nav-list">
               <li class="nav-header"><a href="#">Contents</a></li>
-              <li><a href="#principles">Principles</a></li>
-              <li><a href="#boxes">Boxes</a></li>
-              <li><a href="#printing-spaces">Printing spaces</a></li>
-              <li><a href="#indentation-of-new-lines">Indentation of new lines</a></li>
+              <li><a href="#Principles">Principles</a></li>
+              <li><a href="#Boxes">Boxes</a></li>
+              <li><a href="#Printingspaces">Printing spaces</a></li>
+              <li><a href="#Indentationofnewlines">Indentation of new lines</a></li>
               <li class="dropdown">
-                <a class="dropdown-toggle" href="#refinement-on-hov-boxes" data-target="#" data-toggle="dropdown">Refinement on “hov” boxes</a>
+                <a class="dropdown-toggle" href="#Refinementonhovboxes" data-target="#" data-toggle="dropdown">Refinement on “hov” boxes</a>
                 <ul class="dropdown-menu">
-                  <li><a href="#packing-and-structural-hov-boxes">Packing and structural “hov” boxes</a></li>
-                  <li><a href="#differences-between-a-packing-and-a-structural-hov-box">Differences between a packing and a structural “hov” box</a></li>
+                  <li><a href="#Packingandstructuralhovboxes"> Packing and structural “hov” boxes</a></li>
+                  <li><a href="#Differencesbetweenapackingandastructuralhovbox"> Differences between a packing and a structural “hov” box</a></li>
                 </ul>
               </li>
-              <li><a href="#practical-advice">Practical advice</a></li>
-              <li><a href="#printing-to-stdout-using-printf">Printing to <code>stdout</code>: using <code>printf</code></a></li>
+              <li><a href="#Practicaladvice">Practical advice</a></li>
+              <li><a href="#Printingtocodestdoutcodeusingcodeprintfcode">Printing to <code>stdout</code>: using <code>printf</code></a></li>
               <li class="dropdown">
-                <a class="dropdown-toggle" href="#a-concrete-example" data-target="#" data-toggle="dropdown">A concrete example</a>
+                <a class="dropdown-toggle" href="#Aconcreteexample" data-target="#" data-toggle="dropdown">A concrete example</a>
                 <ul class="dropdown-menu">
-                  <li><a href="#most-general-pretty-printing-using-fprintf">Most general pretty-printing: using <code>fprintf</code></a></li>
+                  <li><a href="#Mostgeneralprettyprintingusingcodefprintfcode"> Most general pretty-printing: using <code>fprintf</code></a></li>
                 </ul>
               </li>
             </ul>
