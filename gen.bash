@@ -1,10 +1,17 @@
 #!/bin/bash
 
-if which -s mpp && which omd 
+if which -s mpp && which -s omd 
 then
     true
 else
     echo "You don't have mpp and/or omd"
+    exit 1
+fi
+
+if [[ "$#" == "0" ]]
+then
+    echo "Usage:"
+    echo "$0 md-pages/your-page-to-convert-to-html.md md-pages/a-directory-with-md-files-to-convert"
     exit 1
 fi
 
